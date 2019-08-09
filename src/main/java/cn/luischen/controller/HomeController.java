@@ -69,7 +69,7 @@ public class HomeController extends BaseController{
 
 
     @ApiOperation("blog首页")
-    @GetMapping(value = {"/blog/","/blog/index"})
+    @GetMapping(value = {"/blog","/blog/index"})
     public String blogIndex(
             HttpServletRequest request,
             @ApiParam(name = "limit", value = "页数", required = false)

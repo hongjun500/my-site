@@ -18,7 +18,7 @@ spring:
           #基本属性
           url: jdbc:mysql://127.0.0.1:3306/lu_tale?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
           username: root
-          password: mac123
+          password: '0110'
           #配置初始化大小/最小/最大
           initial-size: 1
           min-idle: 1
@@ -65,6 +65,7 @@ pagehelper:
     params: count=countSql
     returnPageInfo: check
 
+
 swagger:
   show: false
 
@@ -74,4 +75,5 @@ qiniu:
   bucket: "kodo_img"
   cdn:
     url: "http://kodo.bhongjun.com"
+
 
