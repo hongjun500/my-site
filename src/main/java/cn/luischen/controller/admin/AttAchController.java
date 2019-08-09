@@ -91,7 +91,8 @@ public class AttAchController {
             attAch.setAuthorId(sessionUser.getUid());
             attAch.setFtype(TaleUtils.isImage(file.getInputStream()) ? Types.IMAGE.getType() : Types.FILE.getType());
             attAch.setFname(fileName);
-            attAch.setFkey(qiniuCloudService.QINIU_UPLOAD_SITE + fileName);
+            // 为文件上传时域名和文件名称拼接用'/'分隔开,亦可在七牛云配置文件中在域名后缀加上'/',不然不能正常访问
+            attAch.setFkey(qiniuCloudService.QINIU_UPLOAD_SITE + "/" + fileName);
             attAchService.addAttAch(attAch);
             response.getWriter().write( "{\"success\": 1, \"message\":\"上传成功\",\"url\":\"" + attAch.getFkey() + "\"}" );
         } catch (IOException e) {
@@ -131,7 +132,8 @@ public class AttAchController {
                 attAch.setAuthorId(sessionUser.getUid());
                 attAch.setFtype(TaleUtils.isImage(file.getInputStream()) ? Types.IMAGE.getType() : Types.FILE.getType());
                 attAch.setFname(fileName);
-                attAch.setFkey(qiniuCloudService.QINIU_UPLOAD_SITE + fileName);
+                // 为文件上传时域名和文件名称拼接用'/'分隔开,亦可在七牛云配置文件中在域名后缀加上'/',不然不能正常访问
+                attAch.setFkey(qiniuCloudService.QINIU_UPLOAD_SITE + "/" + fileName);
                 attAchService.addAttAch(attAch);
             }
             return APIResponse.success();
