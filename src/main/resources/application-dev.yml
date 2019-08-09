@@ -69,8 +69,8 @@ swagger:
   show: true
 
 qiniu:
-  accesskey: ""
-  serectkey: ""
-  bucket: ""
+  accesskey: "e19pjmCpS2gosU1b0jKEiTkxY2pDH5wk7bISlpxg"
+  serectkey: "DncWUiaQHYT58hLLCjoNsnBODTd6Y7vWK1xqOzX6"
+  bucket: "kodo_img"
   cdn:
-    url: ""
+    url: "http://kodo.bhongjun.com"
